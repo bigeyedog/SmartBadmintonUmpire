@@ -1,0 +1,425 @@
+#body {
+  background-color: black;
+}
+
+.p {
+  margin: 10px;
+}
+
+#upper {
+  display: flex;
+  align-items: center; /* Vertical alignment */
+  justify-content: center; /* Horizontal alignment */
+  margin: auto;
+  width: 80%;
+  aspect-ratio: 18/1;
+  background-color: burlywood;
+  margin-top: 50px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+#lowerL2 {
+  background-color: chocolate;
+  width: 80%;
+  margin: auto;
+  display: flex;
+}
+
+#lowerL2C1 {
+  width: 49.5%;
+  aspect-ratio: 16/7.3;
+  margin: auto;
+  text-align: center;
+  background-color: cadetblue;
+  border-style: solid;
+  border-width: 10px 5px 5px 10px;
+  border-color: beige;
+  padding: 10px;
+  font-size: 20px;
+  align-content: center;
+}
+
+#lowerL2C2 {
+  width: 1%;
+  aspect-ratio: 16/7.3;
+  background-color: darkgreen;
+}
+
+#lowerL2C3 {
+  width: 49.5%;
+  aspect-ratio: 16/7.3;
+  margin: auto;
+  text-align: center;
+  background-color: cadetblue;
+  border-style: solid;
+  border-width: 10px 10px 5px 5px;
+  border-color: beige;
+  padding: 10px;
+  font-size: 20px;
+  align-content: center;
+}
+
+#lowerL3 {
+  background-color: darkgoldenrod;
+  width: 80%;
+  margin: auto;
+  display: flex;
+}
+
+#lowerL3C1 {
+  width: 49.5%;
+  aspect-ratio: 16/7.3;
+  margin: auto;
+  text-align: center;
+  background-color: cadetblue;
+  border-style: solid;
+  border-width: 5px 5px 10px 10px;
+  border-color: beige;
+  padding: 10px;
+  font-size: 20px;
+  align-content: center;
+}
+
+#lowerL3C2 {
+  width: 1%;
+  aspect-ratio: 16/7.3;
+  background-color: darkgreen;
+}
+
+#lowerL3C3 {
+  width: 49.5%;
+  aspect-ratio: 16/7.3;
+  margin: auto;
+  text-align: center;
+  background-color: cadetblue;
+  border-style: solid;
+  border-width: 5px 10px 10px 5px;
+  border-color: beige;
+  padding: 10px;
+  font-size: 20px;
+  align-content: center;
+}
+
+.playerphoto {
+  margin-top: 8px;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+}
+
+#lowerL4 {
+  background-color: burlywood;
+  width: 80%;
+  aspect-ratio: 18/1;
+  margin: auto;
+  text-align: center;
+  padding: 10px;
+}
+
+#label {
+  margin-right: 5px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.select {
+  font-size: 20px;
+}
+
+.option {
+  font-size: 20px;
+}
+
+#instruction {
+  background-color: chocolate;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  color: white;
+  text-align: center;
+}
+
+#message {
+  margin: auto;
+}
+
+#lowerL5 {
+  text-align: center;
+}
+
+#submitbutton {
+  width: 150px;
+  background-color: burlywood;
+  color: black;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 5px;
+}
+
+/* #homebutton {
+  width: 150px;
+  background-color: darkgreen;
+  color: beige;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 5px;
+} */
+
+@media only screen and (max-width: 1200px) {
+  #upper {
+    margin-top: 40px;
+    font-size: 18px;
+  }
+
+  #lowerL2C1 {
+    border-width: 9px 4.5px 4.5px 9px;
+    padding: 8px;
+    font-size: 18px;
+  }
+
+  #lowerL2C3 {
+    border-width: 9px 9px 4.5px 4.5px;
+    padding: 8px;
+    font-size: 18px;
+  }
+
+  #lowerL3C1 {
+    border-width: 4.5px 4.5px 9px 9px;
+    padding: 8px;
+    font-size: 18px;
+  }
+
+  #lowerL3C3 {
+    border-width: 4.5px 9px 9px 4.5px;
+    padding: 8px;
+    font-size: 18px;
+  }
+
+  .playerphoto {
+    margin-top: 7px;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+  }
+
+  #lowerL4 {
+    padding: 8px;
+  }
+
+  #label {
+    margin-right: 4px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .select {
+    font-size: 18px;
+  }
+
+  .option {
+    font-size: 18px;
+  }
+
+  #submitbutton,
+  #resetbutton,
+  #homebutton {
+    width: 130px;
+    font-size: 18px;
+    padding: 4px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  #upper {
+    margin-top: 30px;
+    font-size: 16px;
+  }
+
+  #lowerL2C1 {
+    border-width: 8px 4px 4px 8px;
+    padding: 6px;
+    font-size: 16px;
+  }
+
+  #lowerL2C3 {
+    border-width: 8px 8px 4px 4px;
+    padding: 6px;
+    font-size: 16px;
+  }
+
+  #lowerL3C1 {
+    border-width: 4px 4px 8px 8px;
+    padding: 6px;
+    font-size: 16px;
+  }
+
+  #lowerL3C3 {
+    border-width: 4px 8px 8px 4px;
+    padding: 6px;
+    font-size: 16px3;
+  }
+
+  .playerphoto {
+    margin-top: 6px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+  }
+
+  #lowerL4 {
+    padding: 6px;
+  }
+
+  #label {
+    margin-right: 3px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .select {
+    font-size: 16px;
+  }
+
+  .option {
+    font-size: 16px;
+  }
+
+  #submitbutton,
+  #resetbutton,
+  #homebutton {
+    width: 110px;
+    font-size: 16px;
+    padding: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #upper {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+
+  #lowerL2C1 {
+    border-width: 7px 3.5px 3.5px 7px;
+    padding: 5px;
+    font-size: 14px;
+  }
+
+  #lowerL2C3 {
+    border-width: 7px 7px 3.5px 3.5px;
+    padding: 5px;
+    font-size: 14px;
+  }
+
+  #lowerL3C1 {
+    border-width: 3.5px 3.5px 7px 7px;
+    padding: 5px;
+    font-size: 14px;
+  }
+
+  #lowerL3C3 {
+    border-width: 3.5px 7px 7px 3.5px;
+    padding: 5px;
+    font-size: 14px;
+  }
+
+  .playerphoto {
+    margin-top: 5px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+  }
+
+  #lowerL4 {
+    padding: 5px;
+  }
+
+  #label {
+    margin-right: 2px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .select {
+    font-size: 14px;
+  }
+
+  .option {
+    font-size: 14px;
+  }
+
+  #submitbutton,
+  #resetbutton,
+  #homebutton {
+    width: 100px;
+    font-size: 14px;
+    padding: 2.5px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  #upper {
+    margin-top: 15px;
+    font-size: 12px;
+  }
+
+  #lowerL2C1 {
+    border-width: 6px 3px 3px 6px;
+    padding: 4px;
+    font-size: 12px;
+  }
+
+  #lowerL2C3 {
+    border-width: 6px 6px 3px 3px;
+    padding: 4px;
+    font-size: 12px;
+  }
+
+  #lowerL3C1 {
+    border-width: 3px 3px 6px 6px;
+    padding: 4px;
+    font-size: 12px;
+  }
+
+  #lowerL3C3 {
+    border-width: 3px 6px 6px 3px;
+    padding: 4px;
+    font-size: 12px;
+  }
+
+  .playerphoto {
+    margin-top: 3px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
+
+  #lowerL4 {
+    padding: 4px;
+  }
+
+  #label {
+    margin-right: 2px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .select {
+    font-size: 12px;
+  }
+
+  .option {
+    font-size: 12px;
+  }
+
+  #submitbutton,
+  #resetbutton,
+  #homebutton {
+    width: 100px;
+    font-size: 12px;
+    padding: 2px;
+  }
+}

@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Double game 321a</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+HK:wght@100;300;400;500;700;900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/147b2895a5.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body id="body">
+    <div id="upperBOT">
+      <div id="upperC1BOT">
+        <p class="p" id="displayText"></p>
+      </div>
+      <div id="upperC2BOT">
+        <table id="table">
+          <tbody>
+            <tr>
+              <td class="td1" id="tableTeamA"></td>
+              <td class="td2">
+                <input
+                  type="text"
+                  class="smallInput"
+                  id="teamAgameWon"
+                  name="teamAgameWon"
+                  value="0"
+                  readonly
+                />
+              </td>
+              <td class="td2">
+                <input
+                  type="text"
+                  class="smallInput"
+                  value="0"
+                  id="teamAgame1score"
+                  name="teamAgame1score"
+                  readonly
+                />
+              </td>
+            </tr>
+            <tr>
+              <td class="td1" id="tableTeamB"></td>
+              <td class="td2">
+                <input
+                  type="text"
+                  class="smallInput"
+                  id="teamBgameWon"
+                  name="teamBgameWon"
+                  value="0"
+                  readonly
+                />
+              </td>
+              <td class="td2">
+                <input
+                  type="text"
+                  class="smallInput"
+                  value="0"
+                  id="teamBgame1score"
+                  name="teamBgame1score"
+                  readonly
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="upperC3BOT">
+        <button
+          type="button"
+          id="homebutton"
+          onclick="window.location.href = 'index.html'"
+        >
+          Home
+        </button>
+      </div>
+    </div>
+
+    <div id="lower">
+      <div id="lowerL1">
+        <div id="lowerL1C1"></div>
+        <div id="lowerL1C2">
+          <p id="leftPlayer"></p>
+          <input class="scorebox" id="leftScoreBox" type="text" value="0" />
+        </div>
+        <div id="lowerL1C3">
+          <div id="game1"><p>Game 1</p></div>
+          <div style="display: none" id="toGame2">
+            <button
+              type="button"
+              id="toGame2Button"
+              onclick="continueToGame2()"
+            >
+              Continue to game 2
+            </button>
+          </div>
+        </div>
+        <div id="lowerL1C4">
+          <p id="rightPlayer" value=""></p>
+          <input class="scorebox" id="rightScoreBox" type="text" value="0" />
+        </div>
+        <div id="lowerL1C5"></div>
+      </div>
+      <div id="lowerL2">
+        <div id="lowerL2C1"></div>
+        <div id="lowerL2C2" class="lu">
+          <p style="width: 75%" id="luplayer"></p>
+          <!-- <img style="width: 75%" class="playerphoto" src="bear.png" width="60" height="75" /> -->
+        </div>
+        <div id="lowerL2C3"></div>
+        <div id="lowerL2C4" class="ru">
+          <p style="width: 75%" id="ruplayer"></p>
+          <!-- <img style="width: 75%" class="playerphoto" src="fox.png" width="60" height="75" /> -->
+        </div>
+        <div id="lowerL2C5"></div>
+      </div>
+      <div id="lowerL3">
+        <div id="lowerL3C1"></div>
+        <div id="lowerL3C2" class="ll">
+          <p style="width: 75%" id="llplayer"></p>
+          <!-- <img style="width: 75%" class="playerphoto" src="elephant.png" width="60" height="75" /> -->
+        </div>
+        <div id="lowerL3C3"></div>
+        <div id="lowerL3C4" class="rl">
+          <p style="width: 75%" id="rlplayer"></p>
+          <!-- <img style="width: 75%" class="playerphoto" src="penguin.png" width="60" height="75" /> -->
+        </div>
+        <div id="lowerL3C5"></div>
+      </div>
+
+      <div id="lowerL4">
+        <div id="lowerL4C1"></div>
+        <div id="lowerL4C2">
+          <button
+            type="button"
+            class="plusbutton"
+            id="plusbutton1"
+            onclick="addLeft()"
+          >
+            <img src="plusicon.png" alt="Icon" class="icon" width="50" />
+          </button>
+        </div>
+        <div id="lowerL4C3">
+          <button type="button" id="editbutton1" onclick="backOnePoint()">
+            Back one point
+          </button>
+        </div>
+
+        <div id="lowerL4C4">
+          <button
+            type="button"
+            class="plusbutton"
+            id="plusbutton2"
+            onclick="addRight()"
+          >
+            <img src="plusicon.png" alt="Icon" class="icon" width="50" />
+          </button>
+        </div>
+        <div id="lowerL4C5"></div>
+      </div>
+    </div>
+
+    <div id="bottom">
+      <p id="copyright">
+        &copy; <span id="trademark"></span> bigeyedog.studio
+        <!-- <img
+        src="bigeyedog.jpg"
+        alt="bigeyedog"
+        style="
+          width: 16px;
+          height: 16px;
+          vertical-align: middle;
+          border-radius: 50%;
+        "
+      /> -->
+        All rights reserved.
+      </p>
+    </div>
+
+    <script>
+      const startYear = 2025;
+      const currentYear = new Date().getFullYear();
+      const copyrightText =
+        startYear === currentYear
+          ? currentYear
+          : `${startYear} - ${currentYear}`;
+      document.getElementById("trademark").textContent = copyrightText;
+    </script>
+
+    <script>
+      const teamAp1 = sessionStorage.getItem("teamAp1");
+      const teamAp2 = sessionStorage.getItem("teamAp2");
+      const teamBp1 = sessionStorage.getItem("teamBp1");
+      const teamBp2 = sessionStorage.getItem("teamBp2");
+      const ruPlayer = sessionStorage.getItem("ruPlayer");
+      const rlPlayer = sessionStorage.getItem("rlPlayer");
+      const llPlayer = sessionStorage.getItem("llPlayer");
+      const luPlayer = sessionStorage.getItem("luPlayer");
+      const sPlayer = sessionStorage.getItem("sPlayer");
+      const gametype = sessionStorage.getItem("gametype");
+      const format = sessionStorage.getItem("format");
+      const displayText = gametype + ", " + format;
+      document.getElementById("displayText").textContent = displayText;
+      document.getElementById("ruplayer").textContent = ruPlayer;
+      document.getElementById("rlplayer").textContent = rlPlayer;
+      document.getElementById("llplayer").textContent = llPlayer;
+      document.getElementById("luplayer").textContent = luPlayer;
+      document.getElementById("leftPlayer").textContent =
+        llPlayer + "/" + luPlayer;
+      document.getElementById("rightPlayer").textContent =
+        ruPlayer + "/" + rlPlayer;
+      document.getElementById("tableTeamA").textContent =
+        teamAp1 + "/" + teamAp2;
+      document.getElementById("tableTeamB").textContent =
+        teamBp1 + "/" + teamBp2;
+
+      const scoreSet = [];
+
+      if (ruPlayer === sPlayer) {
+        $(".ru").css("background-color", "darkorange");
+        scoreSet.push([
+          0,
+          0,
+          "ru",
+          ruPlayer,
+          rlPlayer,
+          llPlayer,
+          luPlayer,
+          0,
+          0,
+        ]);
+      } else if (llPlayer === sPlayer) {
+        $(".ll").css("background-color", "darkorange");
+        scoreSet.push([
+          0,
+          0,
+          "ll",
+          ruPlayer,
+          rlPlayer,
+          llPlayer,
+          luPlayer,
+          0,
+          0,
+        ]);
+      }
+
+      console.log(scoreSet);
+
+      if ($("#leftScoreBox").val() == 0 && $("#rightScoreBox").val() == 0) {
+        $("#editbutton1").prop("disabled", true);
+      }
+
+      window.onload = function () {
+        alert(
+          "Instructions:\n" +
+            "1. Press the corresponding plus(+) button to add one point to the side which won the point\n" +
+            "2. Use the back one point button to make corrections\n" +
+            "3. Serving player/position is indicated in a different court color\n" +
+            "4. Do not use the back button or refresh button during the game\n"
+        );
+      };
+    </script>
+
+    <script>
+      function addLeft() {
+        const currentScore = Number($("#leftScoreBox").val());
+        const newScore = currentScore + 1;
+        $("#leftScoreBox").val(newScore);
+        const leftScore = Number($("#leftScoreBox").val());
+        const rightScore = Number($("#rightScoreBox").val());
+
+        const currentRUplayer = $("#ruplayer").text();
+        const currentRLplayer = $("#rlplayer").text();
+        const currentLLplayer = $("#llplayer").text();
+        const currentLUplayer = $("#luplayer").text();
+
+        if (currentLLplayer == teamAp1 || currentLUplayer == teamAp1) {
+          $("#teamAgame1score").val(leftScore);
+          $("#teamBgame1score").val(rightScore);
+        } else if (currentRUplayer == teamAp1 || currentRLplayer == teamAp1) {
+          $("#teamAgame1score").val(rightScore);
+          $("#teamBgame1score").val(leftScore);
+        }
+
+        const teamAgame1score = Number($("#teamAgame1score").val());
+        const teamBgame1score = Number($("#teamBgame1score").val());
+
+        if (
+          $(".lu").css("background-color") === "rgb(255, 140, 0)" ||
+          $(".ll").css("background-color") === "rgb(255, 140, 0)"
+        ) {
+          if (newScore % 2 == 0) {
+            document.getElementById("luplayer").textContent = currentLLplayer;
+            document.getElementById("llplayer").textContent = currentLUplayer;
+            $(".lu").css("background-color", "cadetblue");
+            $(".ll").css("background-color", "darkorange");
+            document.getElementById("ruplayer").textContent = currentRUplayer;
+            document.getElementById("rlplayer").textContent = currentRLplayer;
+            $(".ru").css("background-color", "cadetblue");
+            $(".rl").css("background-color", "cadetblue");
+            $("#editbutton1").prop("disabled", false);
+
+            const newRUplayer = document.getElementById("ruplayer").textContent;
+            const newRLplayer = document.getElementById("rlplayer").textContent;
+            const newLLplayer = document.getElementById("llplayer").textContent;
+            const newLUplayer = document.getElementById("luplayer").textContent;
+
+            scoreSet.push([
+              leftScore,
+              rightScore,
+              "ll",
+              newRUplayer,
+              newRLplayer,
+              newLLplayer,
+              newLUplayer,
+              teamAgame1score,
+              teamBgame1score,
+            ]);
+            console.log(scoreSet);
+          } else if (newScore % 2 == 1) {
+            document.getElementById("luplayer").textContent = currentLLplayer;
+            document.getElementById("llplayer").textContent = currentLUplayer;
+            $(".lu").css("background-color", "darkorange");
+            $(".ll").css("background-color", "cadetblue");
+            document.getElementById("ruplayer").textContent = currentRUplayer;
+            document.getElementById("rlplayer").textContent = currentRLplayer;
+            $(".ru").css("background-color", "cadetblue");
+            $(".rl").css("background-color", "cadetblue");
+            $("#editbutton1").prop("disabled", false);
+
+            const newRUplayer = document.getElementById("ruplayer").textContent;
+            const newRLplayer = document.getElementById("rlplayer").textContent;
+            const newLLplayer = document.getElementById("llplayer").textContent;
+            const newLUplayer = document.getElementById("luplayer").textContent;
+
+            scoreSet.push([
+              leftScore,
+              rightScore,
+              "lu",
+              newRUplayer,
+              newRLplayer,
+              newLLplayer,
+              newLUplayer,
+              teamAgame1score,
+              teamBgame1score,
+            ]);
+            console.log(scoreSet);
+          }
+        } else if (
+          $(".ru").css("background-color") === "rgb(255, 140, 0)" ||
+          $(".rl").css("background-color") === "rgb(255, 140, 0)"
+        ) {
+          if (newScore % 2 == 0) {
+            document.getElementById("luplayer").textContent = currentLUplayer;
+            document.getElementById("llplayer").textContent = currentLLplayer;
+            $(".lu").css("background-color", "cadetblue");
+            $(".ll").css("background-color", "darkorange");
+            document.getElementById("ruplayer").textContent = currentRUplayer;
+            document.getElementById("rlplayer").textContent = currentRLplayer;
+            $(".ru").css("background-color", "cadetblue");
+            $(".rl").css("background-color", "cadetblue");
+            $("#editbutton1").prop("disabled", false);
+
+            const newRUplayer = document.getElementById("ruplayer").textContent;
+            const newRLplayer = document.getElementById("rlplayer").textContent;
+            const newLLplayer = document.getElementById("llplayer").textContent;
+            const newLUplayer = document.getElementById("luplayer").textContent;
+
+            scoreSet.push([
+              leftScore,
+              rightScore,
+              "ll",
+              newRUplayer,
+              newRLplayer,
+              newLLplayer,
+              newLUplayer,
+              teamAgame1score,
+              teamBgame1score,
+            ]);
+            console.log(scoreSet);
+          } else if (newScore % 2 == 1) {
+            document.getElementById("luplayer").textContent = currentLUplayer;
+            document.getElementById("llplayer").textContent = currentLLplayer;
+            $(".lu").css("background-color", "darkorange");
+            $(".ll").css("background-color", "cadetblue");
+            document.getElementById("ruplayer").textContent = currentRUplayer;
+            document.getElementById("rlplayer").textContent = currentRLplayer;
+            $(".ru").css("background-color", "cadetblue");
+            $(".rl").css("background-color", "cadetblue");
+            $("#editbutton1").prop("disabled", false);
+
+            const newRUplayer = document.getElementById("ruplayer").textContent;
+            const newRLplayer = document.getElementById("rlplayer").textContent;
+            const newLLplayer = document.getElementById("llplayer").textContent;
+            const newLUplayer = document.getElementById("luplayer").textContent;
+
+            scoreSet.push([
+              leftScore,
+              rightScore,
+              "lu",
+              newRUplayer,
+              newRLplayer,
+              newLLplayer,
+              newLUplayer,
+              teamAgame1score,
+              teamBgame1score,
+            ]);
+            console.log(scoreSet);
+          }
+        }
+
+        const differenceLR = leftScore - rightScore;
+        if ((leftScore >= 21 && differenceLR > 1) || leftScore == 30) {
+          $("#game1").css("display", "none");
+          $("#toGame2").css("display", "block");
+          $("#plusbutton1, #plusbutton2").prop("disabled", true);
+          $("#leftScoreBox").css("font-weight", "600");
+
+          if (currentLLplayer == teamAp1 || currentLUplayer == teamAp1) {
+            $("#teamAgame1score").css("font-weight", "600");
+            $("#teamAgameWon").val(1);
+          } else if (currentLLplayer == teamBp1 || currentLUplayer == teamBp1) {
+            $("#teamBgame1score").css("font-weight", "600");
+            $("#teamBgameWon").val(1);
+          }
+        }
+
+        const teamAgameWon = Number($("#teamAgameWon").val());
+        const teamBgameWon = Number($("#teamBgameWon").val());
+
+        sessionStorage.setItem("teamAgameWon", teamAgameWon);
+        sessionStorage.setItem("teamBgameWon", teamBgameWon);
+        sessionStorage.setItem("teamAgame1score", teamAgame1score);
+        sessionStorage.setItem("teamBgame1score", teamBgame1score);
+      }
+
+      function addRight() {
+        const currentScore = Number($("#rightScoreBox").val());
+        const newScore = currentScore + 1;
+        $("#rightScoreBox").val(newScore);
+        const leftScore = Number($("#leftScoreBox").val());
+        const rightScore = Number($("#rightScoreBox").val());
+
+        const currentRUplayer = $("#ruplayer").text();
+        const currentRLplayer = $("#rlplayer").text();
+        const currentLLplayer = $("#llplayer").text();
+        const currentLUplayer = $("#luplayer").text();
+
+        if (currentLLplayer == teamAp1 || currentLUplayer == teamAp1) {
+          $("#teamAgame1score").val(leftScore);
+          $("#teamBgame1score").val(rightScore);
+        } else if (currentRUplayer == teamAp1 || currentRLplayer == teamAp1) {
+          $("#teamAgame1score").val(rightScore);
+          $("#teamBgame1score").val(leftScore);
+        }
+
+        const teamAgame1score = Number($("#teamAgame1score").val());
+        const teamBgame1score = Number($("#teamBgame1score").val());
+
+        if (
+          $(".ru").css("background-color") === "rgb(255, 140, 0)" ||
+          $(".rl").css("background-color") === "rgb(255, 140, 0)"
+        ) {
+          if (newScore % 2 == 0) {
+            document.getElementById("luplayer").textContent = currentLUplayer;
+            document.getElementById("llplayer").textContent = currentLLplayer;
+            $(".lu").css("background-color", "cadetblue");
+            $(".ll").css("background-color", "cadetblue");
+            document.getElementById("ruplayer").textContent = currentRLplayer;
+            document.getElementById("rlplayer").textContent = currentRUplayer;
+            $(".ru").css("background-color", "darkorange");
+            $(".rl").css("background-color", "cadetblue");
+            $("#editbutton1").prop("disabled", false);
+
+            const newRUplayer = document.getElementById("ruplayer").textContent;
+            const newRLplayer = document.getElementById("rlplayer").textContent;
+            const newLLplayer = document.getElementById("llplayer").textContent;
+            const newLUplayer = document.getElementById("luplayer").textContent;
+
+            scoreSet.push([
+              leftScore,
+              rightScore,
+              "ru",
+              newRUplayer,
+              newRLplayer,
+              newLLplayer,
+              newLUplayer,
+              teamAgame1score,
+              teamBgame1score,
+            ]);
+            console.log(scoreSet);
+          } else if (newScore % 2 == 1) {
+            document.getElementById("luplayer").textContent = currentLUplayer;
+            document.getElementById("llplayer").textContent = currentLLplayer;
+            $(".lu").css("background-color", "cadetblue");
+            $(".ll").css("background-color", "cadetblue");
+            document.getElementById("ruplayer").textContent = currentRLplayer;
+            document.getElementById("rlplayer").textContent = currentRUplayer;
+            $(".ru").css("background-color", "cadetblue");
+            $(".rl").css("background-color", "darkorange");
+            $("#editbutton1").prop("disabled", false);
+
+            const newRUplayer = document.getElementById("ruplayer").textContent;
+            const newRLplayer = document.getElementById("rlplayer").textContent;
+            const newLLplayer = document.getElementById("llplayer").textContent;
+            const newLUplayer = document.getElementById("luplayer").textContent;
+
+            scoreSet.push([
+              leftScore,
+              rightScore,
+              "rl",
+              newRUplayer,
+              newRLplayer,
+              newLLplayer,
+              newLUplayer,
+              teamAgame1score,
+              teamBgame1score,
+            ]);
+            console.log(scoreSet);
+          }
+        } else if (
+          $(".lu").css("background-color") === "rgb(255, 140, 0)" ||
+          $(".ll").css("background-color") === "rgb(255, 140, 0)"
+        ) {
+          if (newScore % 2 == 0) {
+            document.getElementById("luplayer").textContent = currentLUplayer;
+            document.getElementById("llplayer").textContent = currentLLplayer;
+            $(".lu").css("background-color", "cadetblue");
+            $(".ll").css("background-color", "cadetblue");
+            document.getElementById("ruplayer").textContent = currentRUplayer;
+            document.getElementById("rlplayer").textContent = currentRLplayer;
+            $(".ru").css("background-color", "darkorange");
+            $(".rl").css("background-color", "cadetblue");
+            $("#editbutton1").prop("disabled", false);
+
+            const newRUplayer = document.getElementById("ruplayer").textContent;
+            const newRLplayer = document.getElementById("rlplayer").textContent;
+            const newLLplayer = document.getElementById("llplayer").textContent;
+            const newLUplayer = document.getElementById("luplayer").textContent;
+
+            scoreSet.push([
+              leftScore,
+              rightScore,
+              "ru",
+              newRUplayer,
+              newRLplayer,
+              newLLplayer,
+              newLUplayer,
+              teamAgame1score,
+              teamBgame1score,
+            ]);
+            console.log(scoreSet);
+          } else if (newScore % 2 == 1) {
+            document.getElementById("luplayer").textContent = currentLUplayer;
+            document.getElementById("llplayer").textContent = currentLLplayer;
+            $(".lu").css("background-color", "cadetblue");
+            $(".ll").css("background-color", "cadetblue");
+            document.getElementById("ruplayer").textContent = currentRUplayer;
+            document.getElementById("rlplayer").textContent = currentRLplayer;
+            $(".ru").css("background-color", "cadetblue");
+            $(".rl").css("background-color", "darkorange");
+            $("#editbutton1").prop("disabled", false);
+
+            const newRUplayer = document.getElementById("ruplayer").textContent;
+            const newRLplayer = document.getElementById("rlplayer").textContent;
+            const newLLplayer = document.getElementById("llplayer").textContent;
+            const newLUplayer = document.getElementById("luplayer").textContent;
+
+            scoreSet.push([
+              leftScore,
+              rightScore,
+              "rl",
+              newRUplayer,
+              newRLplayer,
+              newLLplayer,
+              newLUplayer,
+              teamAgame1score,
+              teamBgame1score,
+            ]);
+            console.log(scoreSet);
+          }
+        }
+
+        const differenceRL = rightScore - leftScore;
+        const winnerNameR = $("#rightPlayer").text();
+        if ((rightScore >= 21 && differenceRL > 1) || rightScore == 30) {
+          $("#game1").css("display", "none");
+          $("#toGame2").css("display", "block");
+          $("#plusbutton1, #plusbutton2").prop("disabled", true);
+          $("#rightScoreBox").css("font-weight", "600");
+
+          if (currentRUplayer == teamAp1 || currentRLplayer == teamAp1) {
+            $("#teamAgame1score").css("font-weight", "600");
+            $("#teamAgameWon").val(1);
+          } else if (currentRUplayer == teamBp1 || currentRLplayer == teamBp1) {
+            $("#teamBgame1score").css("font-weight", "600");
+            $("#teamBgameWon").val(1);
+          }
+        }
+
+        const teamAgameWon = Number($("#teamAgameWon").val());
+        const teamBgameWon = Number($("#teamBgameWon").val());
+
+        sessionStorage.setItem("teamAgameWon", teamAgameWon);
+        sessionStorage.setItem("teamBgameWon", teamBgameWon);
+        sessionStorage.setItem("teamAgame1score", teamAgame1score);
+        sessionStorage.setItem("teamBgame1score", teamBgame1score);
+      }
+
+      function backOnePoint() {
+        $(
+          "#rightScoreBox, #leftScoreBox, #teamAgame1score, #teamBgame1score"
+        ).css("font-weight", "");
+        $("#teamAgameWon, #teamBgameWon").val(0);
+        $("#plusbutton1, #plusbutton2").prop("disabled", false);
+        $(".lu, .ru, .ll, .rl").css("background-color", "cadetblue");
+        $("#game1").css("display", "block");
+        $("#toGame2").css("display", "none");
+
+        scoreSet.pop();
+        const sslength = scoreSet.length;
+        const lastLeftScore = scoreSet[sslength - 1][0];
+        const lastRightScore = scoreSet[sslength - 1][1];
+        $("#leftScoreBox").val(lastLeftScore);
+        $("#rightScoreBox").val(lastRightScore);
+        if ($("#leftScoreBox").val() == 0 && $("#rightScoreBox").val() == 0) {
+          $("#editbutton1").prop("disabled", true);
+        }
+        const quadrant = scoreSet[sslength - 1][2];
+        const darkorangeClass = "." + quadrant;
+        $(darkorangeClass).css("background-color", "darkorange");
+
+        $("#ruplayer").text(scoreSet[sslength - 1][3]);
+        $("#rlplayer").text(scoreSet[sslength - 1][4]);
+        $("#llplayer").text(scoreSet[sslength - 1][5]);
+        $("#luplayer").text(scoreSet[sslength - 1][6]);
+        $("#teamAgame1score").val(scoreSet[sslength - 1][7]);
+        $("#teamBgame1score").val(scoreSet[sslength - 1][8]);
+      }
+    </script>
+
+    <script>
+      function continueToGame2() {
+        window.location.href = "game2doubleSetup.html";
+      }
+    </script>
+  </body>
+</html>

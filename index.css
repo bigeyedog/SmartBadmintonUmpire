@@ -1,0 +1,261 @@
+#body {
+  background-color: black;
+}
+
+#title {
+  text-align: center;
+  margin-top: 30px;
+}
+
+#span2 {
+  font-size: 60px;
+  color: chartreuse;
+  font-style: italic;
+}
+
+#span1,
+#span3 {
+  font-size: 36px;
+  font-weight: 600;
+  color: chocolate;
+  text-decoration: underline;
+}
+
+#description {
+  margin-right: 10%;
+  margin-left: 10%;
+  color: burlywood;
+  font-size: 20px;
+}
+
+#welcome {
+  font-size: 24px;
+  color: cornflowerblue;
+}
+
+#startup {
+  text-align: center;
+  margin-top: 10px;
+}
+
+#startbutton {
+  width: 150px;
+  background-color: chocolate;
+  color: black;
+  font-size: 24px;
+  font-weight: 500;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+#point,
+#type,
+#submit {
+  margin-left: 10%;
+  text-align: left;
+}
+
+#type {
+  margin-top: 10px;
+}
+
+#point {
+  margin-top: 15px;
+}
+
+#submit {
+  margin-top: 20px;
+}
+
+.legend {
+  font-size: 24px;
+}
+
+.label {
+  margin-left: 10px;
+  margin-top: 5px;
+  text-align: left;
+  color: burlywood;
+  font-size: 24px;
+  /* font-weight: 600; */
+  margin-bottom: 0px;
+}
+
+#submitbutton {
+  width: 150px;
+  background-color: chocolate;
+  color: black;
+  font-size: 24px;
+  font-weight: 500;
+  border-radius: 10px;
+  padding: 5px;
+  margin-top: 0px;
+}
+
+input[type="radio"] {
+  accent-color: yellow; /* Changes the checked color to red */
+}
+
+@media only screen and (max-width: 1200px) {
+  #title {
+    margin-top: 25px;
+  }
+
+  #span2 {
+    font-size: 50px;
+  }
+
+  #span1,
+  #span3 {
+    font-size: 30px;
+  }
+
+  #description {
+    font-size: 20px;
+  }
+
+  #welcome {
+    font-size: 24px;
+  }
+
+  #startbutton {
+    width: 150px;
+    font-size: 24px;
+  }
+
+  .legend {
+    font-size: 24px;
+  }
+
+  .label {
+    font-size: 24px;
+  }
+
+  #submitbutton {
+    width: 150px;
+    font-size: 24px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  #title {
+    margin-top: 25px;
+  }
+
+  #span2 {
+    font-size: 40px;
+  }
+
+  #span1,
+  #span3 {
+    font-size: 24px;
+  }
+
+  #description {
+    font-size: 18px;
+  }
+
+  #welcome {
+    font-size: 22px;
+  }
+
+  #startbutton {
+    width: 120px;
+    font-size: 22px;
+  }
+
+  .legend {
+    font-size: 22px;
+  }
+
+  .label {
+    font-size: 22px;
+  }
+
+  #submitbutton {
+    width: 120px;
+    font-size: 22px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #title {
+    margin-top: 25px;
+  }
+
+  #span2 {
+    font-size: 30px;
+  }
+
+  #span1,
+  #span3 {
+    font-size: 20px;
+  }
+
+  #description {
+    font-size: 16px;
+  }
+
+  #welcome {
+    font-size: 20px;
+  }
+
+  #startbutton {
+    width: 120px;
+    font-size: 20px;
+  }
+
+  .legend {
+    font-size: 20px;
+  }
+
+  .label {
+    font-size: 20px;
+  }
+
+  #submitbutton {
+    width: 120px;
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  #title {
+    margin-top: 25px;
+  }
+
+  #span2 {
+    font-size: 30px;
+  }
+
+  #span1,
+  #span3 {
+    font-size: 20px;
+  }
+
+  #description {
+    font-size: 16px;
+  }
+
+  #welcome {
+    font-size: 20px;
+  }
+
+  #startbutton {
+    width: 120px;
+    font-size: 20px;
+  }
+
+  .legend {
+    font-size: 20px;
+  }
+
+  .label {
+    font-size: 20px;
+  }
+
+  #submitbutton {
+    width: 120px;
+    font-size: 20px;
+  }
+}

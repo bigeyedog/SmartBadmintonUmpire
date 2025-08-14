@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Double player entry</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="playerentry.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+HK:wght@100;300;400;500;700;900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/147b2895a5.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body id="body">
+    <div class="flex">
+      <div class="topside"></div>
+      <div id="title">
+        <p>
+          <span id="span1">SMART</span><span id="span2"> Badminton </span
+          ><span id="span3">UMPIRE</span>
+        </p>
+      </div>
+      <div class="topside"></div>
+    </div>
+
+    <div>
+      <p class="text" id="displayText"></p>
+    </div>
+
+    <div class="flex">
+      <div class="side"></div>
+      <div id="double">
+        <p class="text">Player entry :</p>
+        <label class="label" class="">Team A :</label><br />
+        <input
+          class="playerinput"
+          type="text"
+          id="teamAp1"
+          name="teamAp1"
+          placeholder="player 1, max 6 characters"
+          size="16"
+          maxlength="6"
+          required
+        /><br />
+        <input
+          class="playerinput"
+          type="text"
+          id="teamAp2"
+          name="teamAp2"
+          placeholder="player2, max 6 characters"
+          size="16"
+          maxlength="6"
+          required
+        /><br />
+        <label class="label" class="">Team B :</label><br />
+        <input
+          class="playerinput"
+          type="text"
+          id="teamBp1"
+          name="teamBp1"
+          placeholder="player 1, max 6 characters"
+          size="16"
+          maxlength="6"
+          required
+        /><br />
+        <input
+          class="playerinput"
+          type="text"
+          id="teamBp2"
+          name="teamBp2"
+          placeholder="player 2, max 6 characters"
+          size="16"
+          maxlength="6"
+          required
+        />
+        <p id="hint">(No duplicate names)</p>
+      </div>
+      <div class="side"></div>
+    </div>
+    <br />
+    <br />
+
+    <div class="">
+      <button type="submit" id="submitbutton" onclick="doubleSetup()">
+        Submit
+      </button>
+      <!-- <button
+          type="button"
+          id="homebutton"
+          onclick="window.location.href = '/index.html'"
+        >
+          Home
+        </button> -->
+    </div>
+
+    <script>
+      const gametype = sessionStorage.getItem("gametype");
+      const format = sessionStorage.getItem("format");
+      const displayText = gametype + ", " + format;
+      document.getElementById("displayText").textContent = displayText;
+    </script>
+
+    <script>
+      function doubleSetup() {
+        const teamAp1 = document.getElementById("teamAp1").value.trim();
+        const teamAp2 = document.getElementById("teamAp2").value.trim();
+        const teamBp1 = document.getElementById("teamBp1").value.trim();
+        const teamBp2 = document.getElementById("teamBp2").value.trim();
+
+        if (
+          teamAp1 === "" ||
+          teamAp2 === "" ||
+          teamBp1 === "" ||
+          teamBp2 === ""
+        ) {
+          alert("Name is required.");
+          return;
+        }
+
+        const teamAp1LC = teamAp1.toLowerCase();
+        const teamAp2LC = teamAp2.toLowerCase();
+        const teamBp1LC = teamBp1.toLowerCase();
+        const teamBp2LC = teamBp2.toLowerCase();
+        const playerArray = [teamAp1LC, teamAp2LC, teamBp1LC, teamBp2LC];
+
+        function hasDuplicates(playerArray) {
+          return new Set(playerArray).size !== playerArray.length;
+        }
+
+        if (hasDuplicates(playerArray)) {
+          alert("No duplicate names.");
+          return;
+        }
+
+        sessionStorage.setItem("teamAp1", teamAp1);
+        sessionStorage.setItem("teamAp2", teamAp2);
+        sessionStorage.setItem("teamBp1", teamBp1);
+        sessionStorage.setItem("teamBp2", teamBp2);
+        window.location.href = "doubleSetup.html";
+      }
+    </script>
+  </body>
+</html>
